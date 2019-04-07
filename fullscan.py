@@ -1,9 +1,11 @@
+#!/usr/bin/python
 import sys
 import os
 import serial
 import time
 import numpy as np
-import Image
+#import Image
+from PIL import Image
 import argparse
 from pylab import *
 import time

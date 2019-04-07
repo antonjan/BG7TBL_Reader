@@ -1,7 +1,8 @@
+#!/usr/bin/python
 import serial
 import time
 import numpy as np
-import Image
+from PIL import Image
 from pylab import *
 
 hold(False)

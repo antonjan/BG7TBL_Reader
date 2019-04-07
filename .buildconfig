@@ -1,0 +1,9 @@
+[default-2]
+name=Default (Copy)
+runtime=host
+config-opts=
+run-opts=
+prefix=/home/anton/.cache/gnome-builder/install/BG7TBL_Reader/host
+app-id=
+postbuild=
+prebuild=
