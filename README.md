@@ -16,3 +16,5 @@ The step is configurable, and when finding the maximum frequency, the multiplica
 xvfb-run is needed if you don't have access to an x-server, since I presently using some pylab routines in the source code, which is part of matplotlib.
 
 --include doesn't work yet (panning feature)
+# Hardware
+![BG7_adf4350_LO.png](images/138MHz_4_4GHz_USB_SMA_5.jpg?raw=true "ADF4350 usb LO ")<br>
