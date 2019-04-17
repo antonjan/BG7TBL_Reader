@@ -1,0 +1,67 @@
+#!/usr/bin/python3
+
+from tkinter import *
+fields = ('LO Frequency', 'Start Sweep Freq', 'Stop Sweep Freq', 'CW Message', 'CW WPM')
+defaultVal = ('2400002700', '2400001500', '2400003500', 'CQ CQ DE ZR6AIC', '10')
+def sweep(entries):
+   # period rate:
+   r = (float(entries['Annual Rate'].get()) / 100) / 12
+   print("r", r)
+   # principal loan:
+   loan = float(entries['Loan Principle'].get())
+   n =  float(entries['Number of Payments'].get())
+   remaining_loan = float(entries['Remaining Loan'].get())
+   q = (1 + r)** n
+   monthly = r * ( (q * loan - remaining_loan) / ( q - 1 ))
+   monthly = ("%8.2f" % monthly).strip()
+   entries['Monthly Payment'].delete(0,END)
+   entries['Monthly Payment'].insert(0, monthly )
+   print("Monthly Payment: %f" % float(monthly))
+
+def set_frequency(entries):
+   # period rate:
+   print("Set Frequncy: ")
+   r = entries['LO Frequency'].get()
+   print("Frequncy is", r)
+
+
+def send_cw(entries):
+   print("Send CW: ")
+   # Send CW message in FSK Mode
+   # CWM = (entries['CW Message'].get()
+   # WPM = ((entries['CW WPM'].get())
+
+
+def makeform(root, fields):
+   entries = {}
+   defaultVal = {}
+   for field in fields:
+      row = Frame(root)
+      lab = Label(row, width=22, text=field+": ", anchor='w')
+      ent = Entry(row)
+      ent.insert(0,"0")
+      row.pack(side=TOP, fill=X, padx=5, pady=5)
+      lab.pack(side=LEFT)
+      ent.pack(side=RIGHT, expand=YES, fill=X)
+      entries[field] = ent
+   return entries
+
+if __name__ == '__main__':
+   root = Tk()
+   ents = makeform(root, fields)
+   root.bind('<Return>', (lambda event, e=ents: fetch(e)))   
+   b1 = Button(root, text='Change Frequency',
+          command=(lambda e=ents: set_frequency(e)))
+   b1.pack(side=LEFT, padx=5, pady=5)
+   b2 = Button(root, text='Sweep',
+          command=(lambda e=ents: sweep(e)))
+   b2.pack(side=LEFT, padx=5, pady=5)
+   b3 = Button(root, text='Send CW',
+               command=(lambda e=ents: monthly_payment(e)))
+   b3.pack(side=LEFT, padx=5, pady=5)
+
+   b4 = Button(root, text='Quit', command=root.quit)
+   b4.pack(side=LEFT, padx=5, pady=5)
+   entries['LO Frequency'].insert(0, 2400000000)
+
+   root.mainloop()

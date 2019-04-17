@@ -1,1 +1,1 @@
-sudo ./set_frequency.py 2400140000
+sudo ./set_frequency.py 2256170000
