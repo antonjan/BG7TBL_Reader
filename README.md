@@ -18,12 +18,14 @@ xvfb-run is needed if you don't have access to an x-server, since I presently us
 --include doesn't work yet (panning feature)
 # How to use the code.
 You can control the frequency with command line or application.
-Command Line
-./set_frequency.py 2400270000
-To run the application below
-./set_frequency_guid.py
-ScreenShot
-![Local Oscillator](images/138MHz_4_4GHz_USB_SMA_5.jpg?raw=true "ADF4350 usb LO ")<br>
+## Command Line<br>
+./set_frequency.py 2400270000<br>
+## To run the application below.<br>
+./set_frequency_guid.py<br>
+## ScreenShot<br>
+
+![QO-100 Local Oscillator](images/Signal_generator_1.png?raw=true "QO-100 Local Oscillator")<br>
+
 
 # Hardware
-![QO-100 Local Oscillator](images/Signal_generator_1.png?raw=true "QO-100 Local Oscillator")<br>
+![Local Oscillator](images/138MHz_4_4GHz_USB_SMA_5.jpg?raw=true "ADF4350 usb LO ")<br>
