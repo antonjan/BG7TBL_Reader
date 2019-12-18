@@ -1,8 +1,8 @@
 #!/usr/bin/python
 import sys, serial
 from Tkinter import *
-
-import tkinter as tk
+#import tkinter as tk
+import Tkinter as tk
 
 window = tk.Tk()
 
