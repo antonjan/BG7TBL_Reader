@@ -16,6 +16,9 @@ The step is configurable, and when finding the maximum frequency, the multiplica
 xvfb-run is needed if you don't have access to an x-server, since I presently using some pylab routines in the source code, which is part of matplotlib.
 
 --include doesn't work yet (panning feature)
+# Install Paython
+https://www.youtube.com/watch?v=GwCZ2KElNdw
+## Then install with the following options ( pip, td/tk )
 # How to use the code. (linux)  for Windows replace '/dev/ttyUSB0' with your comm port 'COM3'
 You can control the frequency with command line or application.
 ## Command Line<br>

@@ -8,6 +8,8 @@ window = tk.Tk()
 
 
 def show_entry_fields():
+    print("Com Port" (entrytext()))
+    entry.insert(window,13, '/dev/ttyUSB0')
     print("frequency: " (entryText.get()))
     entry.insert(window,10, 1234)
 
@@ -26,8 +28,7 @@ def inc_freq(FreqChange):
     '''    assert isinstance(FreqChange, object)'''
     entry.insert(10, entrytext + FreqChange)
     entry.insert(10, FreqChange)
-#    ser = serial.Serial('/dev/ttyUSB0', 57600, timeout=1)  # Linux first FTDI
-    ser = serial.Serial('COM1', 57600, timeout=1)  # Linux first FTDI
+    ser = serial.Serial('/dev/ttyUSB0', 57600, timeout=1)  # Linux first FTDI
     # sys.argv[1] is frequency in Herz
     '''cmd = "\x8f" + "f" + '{:09d}'.format(int(sys.argv[1])/10)'''
     entryText = txt.get()
